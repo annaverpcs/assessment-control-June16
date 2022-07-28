@@ -1,8 +1,8 @@
 #Exercise for ASK automation
-#Author: Anna V
+  #Author Valeria Sorokovskaja
 
   @homepage
   Feature: Home page verification
     @homepage1
     Scenario: Open ASK application
-      Given I navigate "Assessment Control"
+      Given I nagivate "Assessment Control @ Portnov"
