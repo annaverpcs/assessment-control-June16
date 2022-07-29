@@ -5,4 +5,4 @@
   Feature: Home page verification
     @homepage1
     Scenario: Open ASK application
-      Given I nagivate "Assessment Control @ Portnov"
+      Given I nagivated "Assessment Control @ Portnov"
