@@ -37,6 +37,30 @@
       Then I wait for 2 sec
       Then element with xpath "//mat-panel-title[contains(text(),'0 Anna Quiz Demo')]" should not be present
 
-      
+    @homepage2
+    Scenario: Create a quiz using AnnaVStepDefs
+      When I click "Quizzes" menu item AV
+      Then I wait for 1 sec
+      Then I click on the button "Create New Quiz" AV
+      Then I wait for 1 sec
+      Then I type "0 Anna Quiz Demo" as quiz title AV
+      #click on Create new question button
+      Then  I add a question AV
+      #create new question
+      Then element with xpath "//mat-panel-title[contains(text(),'Q1: new empty question')]" should be displayed
+      Then I click on element with xpath "//*[contains(text(),'Single-Choice')]"
+      Then I type "Question Demo 1" into element with xpath "//textarea[@formcontrolname='question']"
+      Then I type "Option 1 Demo 1" into element with xpath "//textarea[@placeholder='Option 1*']"
+      Then I type "Option 2 Demo 1" into element with xpath "//textarea[@placeholder='Option 2*']"
+      Then I click on element with xpath "(//mat-radio-button[@class='mat-radio-button mat-accent'])[2]"
+      Then I click on element with xpath "//span[contains(text(),'Save')]"
+      Then I wait for 1 sec
+      Then element with xpath "//mat-panel-title[contains(text(),'0 Anna Quiz Demo')]" should contain text "0 Anna Quiz Demo"
+     #delete a quiz
+      When I click on element with xpath "//mat-panel-title[contains(text(),'0 Anna Quiz Demo')]"
+      Then I click on element with xpath "//mat-panel-title[contains(text(),'0 Anna Quiz Demo')]/../../..//span[contains(text(),'Delete')]"
+      Then I click on element with xpath "//div[@mat-dialog-actions]//span[contains(text(),'Delete')]"
+      Then I wait for 2 sec
+      Then element with xpath "//mat-panel-title[contains(text(),'0 Anna Quiz Demo')]" should not be present
 
 
